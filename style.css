@@ -85,10 +85,7 @@
   left: 0;
   position: absolute;
   top: 70vh;
-  /* top: calc(var(--top_index)); */
   border-radius: 8px;
-  /* padding: 20px; */
-  /* text-align: center; */
   font-family: "JetBrains Mono", monospace;
   max-width: 340px;
   margin: 0 auto;
@@ -99,9 +96,6 @@
   height: auto;
 }
 /* SIDEBAR */
-html, .sidebar {
-  /* interpolate-size: allow-keywords; */
-}
 .sidebar {
   padding: 1.5vh;
   position: fixed;
@@ -300,12 +294,57 @@ html, .sidebar {
 }
 
 /* DEFINE */
-
+body{
+  background-color: var(--gradient_bg_color);
+  background-image:
+    radial-gradient(
+      var(--gradient_spot4_w) var(--gradient_spot4_h) at left 0 top 0,
+      var(--gradient_spot4_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot3_w) var(--gradient_spot3_h) at left 100% top 0,
+      var(--gradient_spot3_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot1_w) var(--gradient_spot1_h) at left 0 top 100%,
+      var(--gradient_spot1_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot2_w) var(--gradient_spot2_h) at left 100% top 100%,
+      var(--gradient_spot2_color),
+      transparent
+    );
+}
 .content-box {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 3vh;
+  background-color: var(--gradient_bg_color);
+  background-image:
+    radial-gradient(
+      var(--gradient_spot4_w) var(--gradient_spot4_h) at left 0 top 0,
+      var(--gradient_spot4_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot3_w) var(--gradient_spot3_h) at left 100% top 0,
+      var(--gradient_spot3_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot1_w) var(--gradient_spot1_h) at left 0 top 100%,
+      var(--gradient_spot1_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot2_w) var(--gradient_spot2_h) at left 100% top 100%,
+      var(--gradient_spot2_color),
+      transparent
+    );
 }
 .row {
   display: flex;
@@ -377,29 +416,4 @@ html, .sidebar {
 .dot1 {
   margin-left: -3.2vh;
   z-index: 3;
-}
-
-.content-box {
-  background-color: var(--gradient_bg_color);
-  background-image:
-    radial-gradient(
-      var(--gradient_spot4_w) var(--gradient_spot4_h) at left 0 top 0,
-      var(--gradient_spot4_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot3_w) var(--gradient_spot3_h) at left 100% top 0,
-      var(--gradient_spot3_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot1_w) var(--gradient_spot1_h) at left 0 top 100%,
-      var(--gradient_spot1_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot2_w) var(--gradient_spot2_h) at left 100% top 100%,
-      var(--gradient_spot2_color),
-      transparent
-    );
 }
