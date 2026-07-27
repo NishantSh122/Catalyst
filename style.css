@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: none;
-  x-overflow: hidden;
+  overflow-x: hidden;
 }
 
 :root {
@@ -176,7 +176,8 @@
 /* LANDING PAGE */
 
 .hero {
-  width: 100%;
+  /* width: 100%; */
+  /* width: 100vw; */
   overflow: hidden;
   height: 100vh;
   display: flex;
