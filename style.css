@@ -3,16 +3,37 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .sidebar{
+    padding: 10px;
     position:fixed;
     top: 0;
     right: 0;
-    width: 70px;
+    width: 3vw;
     height: 100vh;
     background-color: rgb(255, 68, 0);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.sidebar:hover{
+    width: 9vw;
 }
 .nav-top{
     display: flex;
@@ -22,8 +43,81 @@
 .nav-bottom{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 1vh;
 }
 .sidebar a{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1.4vh;
+    line-height: 1;
+    font-size: 2vh;
+    /* height: 1.2vh; */
+    margin-bottom: 1vh;
+    color: whitesmoke;
     text-decoration: none;
+}
+.hero{
+    /* margin-right: 70px; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FF3C00;
+    background: linear-gradient(90deg, rgba(61, 61, 61, 1) 0%, rgba(16, 16, 16, 1) 30%, rgba(61, 61, 61, 1) 61%, rgba(16, 16, 16, 1) 100%);
+}
+p{
+    padding-left: 2rem;
+    margin-bottom: -40px;
+    font-size: 3.5vh;
+    color: rgb(177, 175, 175);
+    font-family: Homemade Apple;
+}
+.landing_cat{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    background: -webkit-linear-gradient(180deg ,rgba(22, 22, 22, 0.05), white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 14vh;
+    margin: 0;
+    font-family:Boldonse;
+}
+.C{
+    z-index: 1;
+}
+.a{
+    margin-left: 2vh;
+    z-index: 2;
+}
+.T{
+    margin-left: -3.2vh;
+    z-index: 2;
+}
+.a{
+    margin-left: -3.2vh;
+    z-index: 2;
+}
+.L{
+    margin-left: -1.8vh;
+    z-index: 3;
+}
+.i{
+    margin-left: -1.5vh;
+    z-index: 2;
+}
+.S{
+    margin-left: -1.5vh;
+    z-index: 4;
+}
+.t{
+    margin-left: -2.7vh;
+    z-index: 2;
+}
+.dot{
+    margin-left: -3.2vh;
+    z-index: 3;
 }
