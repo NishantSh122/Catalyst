@@ -1,9 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root {
+  --gradient_bg_color: #050505;
+
+  --gradient_spot1_color: #060606;
+  --gradient_spot1_w: 75vw;
+  --gradient_spot1_h: 75vh;
+  --gradient_spot1_x: 0;
+  --gradient_spot1_y: 0;
+
+  --gradient_spot2_color: #ff8017;
+  --gradient_spot2_w: 75vw;
+  --gradient_spot2_h: 75vh;
+  --gradient_spot2_x: 100%;
+  --gradient_spot2_y: 0;
+
+  --gradient_spot3_color: #eb1c0d;
+  --gradient_spot3_w: 75vw;
+  --gradient_spot3_h: 75vh;
+  --gradient_spot3_x: 100%;
+  --gradient_spot3_y: 100%;
+
+  --gradient_spot4_color: #ff2605;
+  --gradient_spot4_w: 75vw;
+  --gradient_spot4_h: 75vh;
+  --gradient_spot4_x: 0;
+  --gradient_spot4_y: 100%;
+}
 .boldonse-regular {
   font-family: "Boldonse", system-ui;
   font-weight: 400;
@@ -15,109 +42,307 @@
   font-style: normal;
 }
 
+/* SIDEBAR */
+.sidebar {
+  padding: 1.5vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5vh;
+  height: 100vh;
+  background-color: rgb(19, 19, 19);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.sidebar:hover {
+  width: 9vw;
+}
+.nav-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.sidebar a {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 1.4vh;
+  line-height: 1;
+  font-size: 2vh;
+  /* height: 1.2vh; */
+  margin-bottom: 1vh;
+  color: rgb(255, 123, 0);
+  text-decoration: none;
+}
+.sidebar a i {
+  width: 2.5vh;
+  height: 2.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.item {
+  display: inline-flex;
+  overflow: hidden;
+  cursor: pointer;
+}
+.text {
+  position: relative;
+  display: inline-block;
+  transform: translateY(0);
+  line-height: 1.3;
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.text,
+.text::after {
+  line-height: 1.3;
+}
+.text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+.item:hover .text {
+  transform: translateY(-100%);
+}
 
-.sidebar{
-    padding: 10px;
-    position:fixed;
-    top: 0;
-    right: 0;
-    width: 3vw;
-    height: 100vh;
-    background-color: rgb(255, 68, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    box-sizing: border-box;
-    white-space: nowrap;
+/* LANDING PAGE */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ff3c00;
+  /* background: linear-gradient(
+    90deg,
+    rgba(61, 61, 61, 1) 0%,
+    rgba(16, 16, 16, 1) 30%,
+    rgba(61, 61, 61, 1) 61%,
+    rgba(16, 16, 16, 1) 100%
+  ); */
 }
-.sidebar:hover{
-    width: 9vw;
+.phrase {
+  padding-left: 2rem;
+  margin-bottom: -40px;
+  font-size: 3.5vh;
+  color: rgb(177, 175, 175);
+  font-family: Homemade Apple;
 }
-.nav-top{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.landing_cat {
+  display: flex;
+  flex-direction: row;
 }
-.nav-bottom{
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
+.C,
+.a,
+.T,
+.a,
+.L,
+.i,
+.S,
+.t,
+.dot {
+  background: -webkit-linear-gradient(180deg, rgba(22, 22, 22, 0.05), white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 14vh;
+  margin: 0;
+  font-family: Boldonse;
 }
-.sidebar a{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 1.4vh;
-    line-height: 1;
-    font-size: 2vh;
-    /* height: 1.2vh; */
-    margin-bottom: 1vh;
-    color: whitesmoke;
-    text-decoration: none;
+.C {
+  z-index: 1;
 }
-.hero{
-    /* margin-right: 70px; */
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #FF3C00;
-    background: linear-gradient(90deg, rgba(61, 61, 61, 1) 0%, rgba(16, 16, 16, 1) 30%, rgba(61, 61, 61, 1) 61%, rgba(16, 16, 16, 1) 100%);
+.a {
+  margin-left: 2vh;
+  z-index: 2;
 }
-p{
-    padding-left: 2rem;
-    margin-bottom: -40px;
-    font-size: 3.5vh;
-    color: rgb(177, 175, 175);
-    font-family: Homemade Apple;
+.T {
+  margin-left: -3.2vh;
+  z-index: 2;
 }
-.landing_cat{
-    display: flex;
-    flex-direction: row;
+.a {
+  margin-left: -3.2vh;
+  z-index: 2;
 }
-h1{
-    background: -webkit-linear-gradient(180deg ,rgba(22, 22, 22, 0.05), white);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 14vh;
-    margin: 0;
-    font-family:Boldonse;
+.L {
+  margin-left: -1.8vh;
+  z-index: 3;
 }
-.C{
-    z-index: 1;
+.i {
+  margin-left: -1.5vh;
+  z-index: 2;
 }
-.a{
-    margin-left: 2vh;
-    z-index: 2;
+.S {
+  margin-left: -1.5vh;
+  z-index: 4;
 }
-.T{
-    margin-left: -3.2vh;
-    z-index: 2;
+.t {
+  margin-left: -2.7vh;
+  z-index: 2;
 }
-.a{
-    margin-left: -3.2vh;
-    z-index: 2;
+.dot {
+  margin-left: -3.2vh;
+  z-index: 3;
 }
-.L{
-    margin-left: -1.8vh;
-    z-index: 3;
+
+/* DEFINE */
+
+.content-box {
+  /* background: #d17a00;
+  background: linear-gradient(
+    90deg,
+    rgba(209, 122, 0, 1) 0%,
+    rgba(94, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(94, 0, 0, 1) 75%,
+    rgba(209, 122, 0, 1) 100%
+  ); */
+  /* 
+  position: relative; */
+  padding: 3vh 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
 }
-.i{
-    margin-left: -1.5vh;
-    z-index: 2;
+.row {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  margin-bottom: 4vh;
 }
-.S{
-    margin-left: -1.5vh;
-    z-index: 4;
+.row-reverse {
+  flex-direction: row-reverse;
 }
-.t{
-    margin-left: -2.7vh;
-    z-index: 2;
+.text-block,
+.image-box {
+  flex: 1;
 }
-.dot{
-    margin-left: -3.2vh;
-    z-index: 3;
+.image-box {
+  height: 30vh;
+}
+.CatOnFire {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -3vh;
+}
+.C1,
+.a1,
+.T1,
+.a1,
+.L1,
+.i1,
+.S1,
+.t1,
+.dot1 {
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05),
+    rgb(255, 102, 0)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 10vh;
+  margin: 0;
+  font-family: Boldonse;
+}
+.C1 {
+  z-index: 1;
+}
+.a1 {
+  margin-left: 2vh;
+  z-index: 2;
+}
+.T1 {
+  margin-left: -3.2vh;
+  z-index: 2;
+}
+.a1 {
+  margin-left: -3.2vh;
+  z-index: 2;
+}
+.L1 {
+  margin-left: -1.8vh;
+  z-index: 3;
+}
+.i1 {
+  margin-left: -1.5vh;
+  z-index: 2;
+}
+.S1 {
+  margin-left: -1.5vh;
+  z-index: 4;
+}
+.t1 {
+  margin-left: -2.7vh;
+  z-index: 2;
+}
+.dot1 {
+  margin-left: -3.2vh;
+  z-index: 3;
+}
+
+.hero {
+  background-color: var(--gradient_bg_color);
+  background-image:
+    radial-gradient(
+      var(--gradient_spot1_w) var(--gradient_spot1_h) at left
+        var(--gradient_spot1_x) top var(--gradient_spot1_y),
+      var(--gradient_spot1_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot2_w) var(--gradient_spot2_h) at left
+        var(--gradient_spot2_x) top var(--gradient_spot2_y),
+      var(--gradient_spot2_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot3_w) var(--gradient_spot3_h) at left
+        var(--gradient_spot3_x) top var(--gradient_spot3_y),
+      var(--gradient_spot3_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot4_w) var(--gradient_spot4_h) at left
+        var(--gradient_spot4_x) top var(--gradient_spot4_y),
+      var(--gradient_spot4_color),
+      transparent
+    );
+}
+.content-box {
+  background-color: var(--gradient_bg_color);
+  background-image:
+    radial-gradient(
+      var(--gradient_spot4_w) var(--gradient_spot4_h) at left 0 top 0,
+      var(--gradient_spot4_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot3_w) var(--gradient_spot3_h) at left 100% top 0,
+      var(--gradient_spot3_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot1_w) var(--gradient_spot1_h) at left 0 top 100%,
+      var(--gradient_spot1_color),
+      transparent
+    ),
+    radial-gradient(
+      var(--gradient_spot2_w) var(--gradient_spot2_h) at left 100% top 100%,
+      var(--gradient_spot2_color),
+      transparent
+    );
 }
