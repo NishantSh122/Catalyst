@@ -2,12 +2,16 @@ $(document).ready(function(){
         $(window).scroll(function(){
             let scroll = $(this).scrollTop();
             let opacity = 1- (scroll/400);
+            let opacity1 = 1- (scroll/800);
+            let opacity2 = 1- (scroll/1200);
             opacity = Math.max(0, Math.min(1, opacity));
+            opacity1 = Math.max(0, Math.min(1, opacity1));
+            opacity2 = Math.max(0, Math.min(1, opacity2));
             $('.landing_cat').css('opacity',opacity);
             $('.phrase').css('opacity',opacity);
             $('.scroll-down').css('opacity',opacity);
-            $('#atom-ca').css('opacity',opacity);
-            $('#atom-ta').css('opacity',opacity);
+            $('#atom-ca').css('opacity',opacity1);
+            $('#atom-ta').css('opacity',opacity2);
             $('#atom-li').css('opacity',opacity);
         });
     }

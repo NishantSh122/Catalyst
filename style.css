@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   scrollbar-width: none;
+  x-overflow: hidden;
 }
 
 :root {
@@ -102,7 +103,7 @@
   top: 0;
   right: 0;
   width: 5vh;
-  height: 100vh;
+  height: 100%;
   background-color: rgb(19, 19, 19);
   display: flex;
   flex-direction: column;
@@ -175,6 +176,8 @@
 /* LANDING PAGE */
 
 .hero {
+  width: 100%;
+  overflow: hidden;
   height: 100vh;
   display: flex;
   position: relative;
@@ -307,7 +310,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: -3vh;
-}
+} 
 .C1,
 .a1,
 .T1,
@@ -316,7 +319,7 @@
 .S1,
 .t1,
 .dot1 {
-  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05), #ff8017);
+  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05), #fbfbfb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 10vh;
