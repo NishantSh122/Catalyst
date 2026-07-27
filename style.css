@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sidebar{
+    position:fixed;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100vh;
+    background-color: rgb(255, 68, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-top{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.nav-bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.sidebar a{
+    text-decoration: none;
+}
