@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* scrollbar-width: none; */
+  scrollbar-width: none;
 }
 :root {
   --gradient_bg_color: #050505;
@@ -40,6 +40,7 @@
   --line-strong: #cfcfcf;
 
   --top_index:70vh;
+  interpolate-size: allow-keywords;
 }
 
 .boldonse-regular {
@@ -98,6 +99,9 @@
   height: auto;
 }
 /* SIDEBAR */
+html, .sidebar {
+  /* interpolate-size: allow-keywords; */
+}
 .sidebar {
   padding: 1.5vh;
   position: fixed;
@@ -116,7 +120,7 @@
   white-space: nowrap;
 }
 .sidebar:hover {
-  width: 9vw;
+  width: 18vh;
   transition: width 0.3s ease;
 }
 .nav-top {
