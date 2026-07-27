@@ -2,10 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
-  overflow-x: hidden;
+  /* scrollbar-width: none; */
 }
-
 :root {
   --gradient_bg_color: #050505;
 
@@ -40,6 +38,8 @@
   --panel: #fbfbfb;
   --line: #e6e6e6;
   --line-strong: #cfcfcf;
+
+  --top_index:70vh;
 }
 
 .boldonse-regular {
@@ -70,7 +70,7 @@
   position: absolute;
   top: 60vh;
   right: 0vh;
-  text-align: center;
+  /* text-align: center; */
   font-family: "JetBrains Mono", monospace;
   max-width: 280px;
   margin: 0 auto;
@@ -81,16 +81,17 @@
   height: auto;
 }
 #atom-ta {
+  left: 0;
   position: absolute;
   top: 70vh;
+  /* top: calc(var(--top_index)); */
   border-radius: 8px;
-  padding: 20px;
-  text-align: center;
+  /* padding: 20px; */
+  /* text-align: center; */
   font-family: "JetBrains Mono", monospace;
   max-width: 340px;
   margin: 0 auto;
   scale: 1.5;
-  z-index: 99;
 }
 #atom-ta svg {
   max-width: 100%;
@@ -102,7 +103,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 5vh;
+  width: 6vh;
   height: 100%;
   background-color: rgb(19, 19, 19);
   display: flex;
@@ -116,6 +117,7 @@
 }
 .sidebar:hover {
   width: 9vw;
+  transition: width 0.3s ease;
 }
 .nav-top {
   display: flex;
@@ -155,7 +157,7 @@
 .text {
   position: relative;
   display: inline-block;
-  transform: translateY(0);
+  transform: translateY(0%);
   line-height: 1.3;
   transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
@@ -165,9 +167,11 @@
 }
 .text::after {
   content: attr(data-text);
+  display: block;
   position: absolute;
   left: 0;
   top: 100%;
+  height: 1.3rem;
 }
 .item:hover .text {
   transform: translateY(-100%);
@@ -176,24 +180,32 @@
 /* LANDING PAGE */
 
 .hero {
-  /* width: 100%; */
-  /* width: 100vw; */
+  height: 100%;
+  z-index: 999;
   overflow: hidden;
-  height: 100vh;
-  display: flex;
   position: relative;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ff3c00;
-  /* background: linear-gradient(
-    90deg,
-    rgba(61, 61, 61, 1) 0%,
-    rgba(16, 16, 16, 1) 30%,
-    rgba(61, 61, 61, 1) 61%,
-    rgba(16, 16, 16, 1) 100%
-  ); */
+  overflow-x: hidden;
+  background-color: var(--gradient_bg_color);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(var(--gradient_spot1_w) var(--gradient_spot1_h) at left var(--gradient_spot1_x) top var(--gradient_spot1_y),
+      var(--gradient_spot1_color),
+      transparent),
+    radial-gradient(var(--gradient_spot2_w) var(--gradient_spot2_h) at left var(--gradient_spot2_x) top var(--gradient_spot2_y),
+      var(--gradient_spot2_color),
+      transparent),
+    radial-gradient(var(--gradient_spot3_w) var(--gradient_spot3_h) at left var(--gradient_spot3_x) top var(--gradient_spot3_y),
+      var(--gradient_spot3_color),
+      transparent),
+    radial-gradient(var(--gradient_spot4_w) var(--gradient_spot4_h) at left var(--gradient_spot4_x) top var(--gradient_spot4_y),
+      var(--gradient_spot4_color),
+      transparent);
 }
+
 .phrase {
   padding-left: 2rem;
   margin-bottom: -40px;
@@ -363,34 +375,6 @@
   z-index: 3;
 }
 
-.hero {
-  background-color: var(--gradient_bg_color);
-  background-image:
-    radial-gradient(
-      var(--gradient_spot1_w) var(--gradient_spot1_h) at left
-        var(--gradient_spot1_x) top var(--gradient_spot1_y),
-      var(--gradient_spot1_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot2_w) var(--gradient_spot2_h) at left
-        var(--gradient_spot2_x) top var(--gradient_spot2_y),
-      var(--gradient_spot2_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot3_w) var(--gradient_spot3_h) at left
-        var(--gradient_spot3_x) top var(--gradient_spot3_y),
-      var(--gradient_spot3_color),
-      transparent
-    ),
-    radial-gradient(
-      var(--gradient_spot4_w) var(--gradient_spot4_h) at left
-        var(--gradient_spot4_x) top var(--gradient_spot4_y),
-      var(--gradient_spot4_color),
-      transparent
-    );
-}
 .content-box {
   background-color: var(--gradient_bg_color);
   background-image:

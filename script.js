@@ -4,6 +4,11 @@ $(document).ready(function(){
             let opacity = 1- (scroll/400);
             let opacity1 = 1- (scroll/800);
             let opacity2 = 1- (scroll/1200);
+            let posy = (window.innerHeight)*0.7
+            posy = posy-(scroll/3);
+            $('#atom-ta').css('top',(window.innerHeight)*0.7-(scroll/3));
+            $('#atom-ca').css('top',(window.innerHeight)*0.6-(scroll/2));
+            $('#atom-li').css('top',(window.innerHeight)*0.06-(scroll/1));
             opacity = Math.max(0, Math.min(1, opacity));
             opacity1 = Math.max(0, Math.min(1, opacity1));
             opacity2 = Math.max(0, Math.min(1, opacity2));
@@ -14,6 +19,8 @@ $(document).ready(function(){
             $('#atom-ta').css('opacity',opacity2);
             $('#atom-li').css('opacity',opacity);
         });
+        updateElements();          // <-- Set initial position
+    $(window).on("scroll", updateElements);
     }
 );
 (function(){
