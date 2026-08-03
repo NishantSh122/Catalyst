@@ -53,9 +53,19 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.roboto-200 {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 #atom-li {
   position: absolute;
-  top: 6vh;
+  top: 3rem;
   left: 0vh;
   transform: translate(-5%);
   text-align: center;
@@ -69,7 +79,7 @@
 }
 #atom-ca {
   position: absolute;
-  top: 60vh;
+  top: 30rem;
   right: 0vh;
   /* text-align: center; */
   font-family: "JetBrains Mono", monospace;
@@ -84,7 +94,7 @@
 #atom-ta {
   left: 0;
   position: absolute;
-  top: 70vh;
+  top: 35rem;
   border-radius: 8px;
   font-family: "JetBrains Mono", monospace;
   max-width: 340px;
@@ -97,11 +107,11 @@
 }
 /* SIDEBAR */
 .sidebar {
-  padding: 1.5vh;
+  padding: 0.75rem;
   position: fixed;
   top: 0;
   right: 0;
-  width: 6vh;
+  width: 3rem;
   height: 100%;
   background-color: rgb(19, 19, 19);
   display: flex;
@@ -114,7 +124,7 @@
   white-space: nowrap;
 }
 .sidebar:hover {
-  width: 18vh;
+  width: 9rem;
   transition: width 0.3s ease;
 }
 .nav-top {
@@ -125,23 +135,23 @@
 .nav-bottom {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 0.5rem;
 }
 .sidebar a {
   text-align: center;
   display: flex;
   align-items: center;
-  gap: 1.4vh;
+  gap: 0.7rem;
   line-height: 1;
-  font-size: 2vh;
+  font-size: 1rem;
   /* height: 1.2vh; */
-  margin-bottom: 1vh;
+  margin-bottom: 0.5rem;
   color: rgb(255, 123, 0);
   text-decoration: none;
 }
 .sidebar a i {
-  width: 2.5vh;
-  height: 2.5vh;
+  width: 1.2rem;
+  height: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +198,7 @@
   align-items: center;
   overflow-x: hidden;
   background-color: var(--gradient_bg_color);
-  min-height: 100vh;
+  min-height: 50rem;
   background-image:
     radial-gradient(var(--gradient_spot1_w) var(--gradient_spot1_h) at left var(--gradient_spot1_x) top var(--gradient_spot1_y),
       var(--gradient_spot1_color),
@@ -206,9 +216,9 @@
 
 .phrase {
   padding-left: 2rem;
-  margin-bottom: -40px;
+  margin-bottom: 0.1rem;
   opacity: 1;
-  font-size: 3.5vh;
+  font-size: 1.75rem;
   color: rgb(177, 175, 175);
   font-family: Homemade Apple;
 }
@@ -229,7 +239,7 @@
   background: -webkit-linear-gradient(180deg, rgba(22, 22, 22, 0.05), white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 14vh;
+  font-size: 7rem;
   margin: 0;
   font-family: Boldonse;
 }
@@ -237,43 +247,43 @@
   z-index: 1;
 }
 .a {
-  margin-left: 2vh;
+  margin-left: 1rem;
   z-index: 2;
 }
 .T {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 2;
 }
 .a {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 2;
 }
 .L {
-  margin-left: -1.8vh;
+  margin-left: -0.9rem;
   z-index: 3;
 }
 .i {
-  margin-left: -1.5vh;
+  margin-left: -0.75rem;
   z-index: 2;
 }
 .S {
-  margin-left: -1.5vh;
+  margin-left: -0.75rem;
   z-index: 4;
 }
 .t {
-  margin-left: -2.7vh;
+  margin-left: -1.35rem;
   z-index: 2;
 }
 .dot {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 3;
 }
 .scroll-down {
   color: whitesmoke;
-  bottom: 4vh;
+  bottom: 2rem;
   left: 50%;
   transform: translate(-50%);
-  font-size: 2vh;
+  font-size: 1rem;
   text-decoration: none;
   animation: bounce 2s infinite ease-in-out;
 }
@@ -322,7 +332,8 @@ body{
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  /* align-items: flex-start; */
+  gap: 1.5rem;
   background-color: var(--gradient_bg_color);
   background-image:
     radial-gradient(
@@ -347,25 +358,71 @@ body{
     );
 }
 .row {
+  position: absolute;
   display: flex;
   gap: 2vw;
   align-items: center;
-  margin-bottom: 4vh;
+  margin-bottom: 2rem;
 }
+.Catalist_what{
+  width: 50rem;
+  height: fit-content;
+  position: absolute;
+  /* top: 35rem; */
+}
+
+p{
+  font-size: 1.1rem;
+  font-family: "Roboto";
+  color: whitesmoke;
+  line-height: 1.6rem;
+}
+
 .row-reverse {
-  flex-direction: row-reverse;
+  position: absolute;
+  display: flex;
+  /* flex-direction: column; */
+  /* padding-left: 60rem; */
+  top: 25rem; 
+  width:50rem ;
+  opacity: 0;
+
+}
+.row-reverse > .text-box2 > h2{
+  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05), #fbfbfb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  margin: 0;
+  font-family: Boldonse;
 }
 .text-block,
 .image-box {
   flex: 1;
 }
-.image-box {
-  height: 30vh;
+.text-box2{
+  margin-right: auto;
 }
+.text-box2para{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.text-box, .text-box2{
+  padding: 1rem;
+  /* text-wrap: break-all; */
+}
+.image-box {
+  height: 20rem;
+}
+
 .CatOnFire {
+  position: absolute;
   display: flex;
   flex-direction: row;
-  margin-bottom: -3vh;
+  top: 20rem;
+  opacity: 1;
+  /* margin-bottom: -3vh; */
 } 
 .C1,
 .a1,
@@ -378,7 +435,7 @@ body{
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05), #fbfbfb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 10vh;
+  font-size: 5rem;
   margin: 0;
   font-family: Boldonse;
 }
@@ -386,34 +443,34 @@ body{
   z-index: 1;
 }
 .a1 {
-  margin-left: 2vh;
+  margin-left: 1rem;
   z-index: 2;
 }
 .T1 {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 2;
 }
 .a1 {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 2;
 }
 .L1 {
-  margin-left: -1.8vh;
+  margin-left: -0.9rem;
   z-index: 3;
 }
 .i1 {
-  margin-left: -1.5vh;
+  margin-left: -0.75rem;
   z-index: 2;
 }
 .S1 {
-  margin-left: -1.5vh;
+  margin-left: -0.75rem;
   z-index: 4;
 }
 .t1 {
-  margin-left: -2.7vh;
+  margin-left: -1.35rem;
   z-index: 2;
 }
 .dot1 {
-  margin-left: -3.2vh;
+  margin-left: -1.6rem;
   z-index: 3;
 }

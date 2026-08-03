@@ -4,14 +4,26 @@ $(document).ready(function(){
             let opacity = 1- (scroll/400);
             let opacity1 = 1- (scroll/800);
             let opacity2 = 1- (scroll/1200);
+            let opacity_inverse = 1-(scroll/800);
             let posy = (window.innerHeight)*0.7
+            let margin_catonfire = 20;
+            let top_Catalist_what = 20;
+            // console.log(margin_catonfire);
+            top_Catalist_what= top_Catalist_what-(scroll/60);
+            margin_catonfire= margin_catonfire-(scroll/30);
+            // console.log(margin_catonfire);
             posy = posy-(scroll/3);
+            $('.CatOnFire').css('top',(Math.max(-1,margin_catonfire)+'rem'));
+            $('.Catalist_what').css('top',(Math.max(6.8,top_Catalist_what)+'rem'));
             $('#atom-ta').css('top',(window.innerHeight)*0.7-(scroll/3));
             $('#atom-ca').css('top',(window.innerHeight)*0.6-(scroll/2));
             $('#atom-li').css('top',(window.innerHeight)*0.06-(scroll/1));
             opacity = Math.max(0, Math.min(1, opacity));
             opacity1 = Math.max(0, Math.min(1, opacity1));
             opacity2 = Math.max(0, Math.min(1, opacity2));
+            opacity_inverse = Math.max(1-opacity_inverse,0);
+            $('.CatOnFire').css('opacity',opacity_inverse);
+            $('.row-reverse').css('opacity',opacity_inverse);
             $('.landing_cat').css('opacity',opacity);
             $('.phrase').css('opacity',opacity);
             $('.scroll-down').css('opacity',opacity);
