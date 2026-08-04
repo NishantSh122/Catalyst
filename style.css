@@ -207,7 +207,7 @@
 /* LANDING PAGE */
 
 .hero {
-  height: 100%;
+  height: 100vh;
   z-index: 999;
   overflow: hidden;
   position: relative;
@@ -387,7 +387,7 @@ body {
   align-items: center;
   /* flex-direction: row; */
   height: 30rem;
-  width: 89.3rem;
+  width: 100vw;
 }
 
 .Catalist_what {
@@ -424,7 +424,7 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 30rem;
-  width: 89.3rem;
+  width: 100vw;
 }
 .text-box2para{
   position: relative;
@@ -436,13 +436,16 @@ p {
   height: 30rem;
   display: flex;
   flex-direction: column;
-  width: 37rem;
+  width: 53rem;
 }
 .image-box2{
   height: 30rem;
   width: 52rem;
   overflow: hidden;
   margin-left: 0rem;
+}
+.row3{
+  opacity: 1;
 }
 .community-box{
   top: 0rem;
@@ -451,9 +454,14 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 30rem;
-  width: 89.3rem;
+  width: 100vw;
+}
+.community-h2{
+  position: absolute ;
+  top: 0rem;
 }
 .text-box3para{
+  top: 0;
   position: relative;
   width: 35rem;
   height: fit-content;
@@ -469,7 +477,7 @@ p {
   height: 30rem;
   width: 52rem;
   overflow: hidden;
-  margin-left: 0rem;
+  margin-right: 0rem;
 }
 
 .row2>.aim-box>.text-box2>h2 {
@@ -481,6 +489,7 @@ p {
   font-family: Boldonse;
 }
 .row3>.community-box>.text-box3>h2 {
+  top: 0;
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.05), #fbfbfb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

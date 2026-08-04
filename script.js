@@ -1,38 +1,50 @@
 $(document).ready(function(){
         $(window).scroll(function(){
           let scroll = $(this).scrollTop();
+          //LANDING PAGE 
             function parallax_opacity(scale, object, prprty){
               let opacity= 1- (scroll/scale);
               opacity = Math.max(0, Math.min(1, opacity));
               return $(object).css(prprty, opacity);
             }
-            function parallax_opacity_inverse(scale, object, prprty){
-              let opacity_inverse = 1-(scroll/scale);
-              opacity_inverse = Math.max(1-opacity_inverse,0);
-              return $(object).css(prprty, opacity_inverse);
-            }
-            let posy = (window.innerHeight)*0.7
-            let margin_catonfire = 20;
-            let top_Catalist_what = 20;
-            top_Catalist_what= top_Catalist_what-(scroll/60);
-            margin_catonfire= margin_catonfire-(scroll/30);
-            posy = posy-(scroll/3);
-            $('.CatOnFire').css('top',(Math.max(-1,margin_catonfire)+'rem'));
-            $('.Catalist_what').css('top',(Math.max(6.8,top_Catalist_what)+'rem'));
-            $('#atom-ta').css('top',(window.innerHeight)*0.7-(scroll/3));
-            $('#atom-ca').css('top',(window.innerHeight)*0.6-(scroll/2));
-            $('#atom-li').css('top',(window.innerHeight)*0.06-(scroll/1));
-            parallax_opacity_inverse(800, '.CatOnFire', 'opacity');
-            parallax_opacity_inverse(800, '.row-inverse', 'opacity');
+            //LANDING PAGE opacity
             parallax_opacity(400, '.phrase', 'opacity');
             parallax_opacity(400, '.landing_cat', 'opacity');
             parallax_opacity(400, '.scroll-down', 'opacity');
             parallax_opacity(800, '#atom-ca', 'opacity');
             parallax_opacity(1200, '#atom-ta', 'opacity');
             parallax_opacity(400, '#atom-li', 'opacity');
+            //LANDING PAGE position
+            $('#atom-ta').css('top',(window.innerHeight)*0.7-(scroll/3));
+            $('#atom-ca').css('top',(window.innerHeight)*0.6-(scroll/2));
+            $('#atom-li').css('top',(window.innerHeight)*0.06-(scroll/1));
+            
+            // CONTENT BOX opacity
+            function parallax_opacity_inverse(scale, object, prprty){
+              let opacity_inverse = 1-(scroll/scale);
+              opacity_inverse = Math.max(1-opacity_inverse,0);
+              return $(object).css(prprty, opacity_inverse);
+            }
+            parallax_opacity_inverse(800, '.CatOnFire', 'opacity');
+            parallax_opacity_inverse(800, '.row-inverse', 'opacity');
+            parallax_opacity_inverse(1500, '.row3', 'opacity');
+            // CONTENT BOX position
+            let top_CatOnFire = 20;
+            let top_Catalist_what = 20;
+            let top_community_h2 = 10;
+            let text_box3para = 20;
+            text_box3para = text_box3para -(scroll/80);
+            top_community_h2 = top_community_h2-(scroll/120);
+            top_Catalist_what= top_Catalist_what-(scroll/60);
+            top_CatOnFire=top_CatOnFire-(scroll/30);
+            $('.CatOnFire').css('top',(Math.max(-1,top_CatOnFire)+'rem'));
+            $('.Catalist_what').css('top',(Math.max(6.8,top_Catalist_what)+'rem'));
+            $('.community-h2').css('top',(Math.max(-1,top_community_h2)+'rem'));
+            $('.text-box3para').css('top',(Math.max(4,text_box3para)+'rem'));
             let drake = -50;
             $('.image-box').css('margin-right',Math.min(drake + scroll/15,0)+'rem');
             $('.image-box2').css('margin-left',Math.min(drake + scroll/22,0)+'rem');
+            $('.image-box3').css('margin-right',Math.min(drake + scroll/28,0)+'rem');
         });
         updateElements();          
     $(window).on("scroll", updateElements);
