@@ -1,37 +1,40 @@
 $(document).ready(function(){
         $(window).scroll(function(){
-            let scroll = $(this).scrollTop();
-            let opacity = 1- (scroll/400);
-            let opacity1 = 1- (scroll/800);
-            let opacity2 = 1- (scroll/1200);
-            let opacity_inverse = 1-(scroll/800);
+          let scroll = $(this).scrollTop();
+            function parallax_opacity(scale, object, prprty){
+              let opacity= 1- (scroll/scale);
+              opacity = Math.max(0, Math.min(1, opacity));
+              return $(object).css(prprty, opacity);
+            }
+            function parallax_opacity_inverse(scale, object, prprty){
+              let opacity_inverse = 1-(scroll/scale);
+              opacity_inverse = Math.max(1-opacity_inverse,0);
+              return $(object).css(prprty, opacity_inverse);
+            }
             let posy = (window.innerHeight)*0.7
             let margin_catonfire = 20;
             let top_Catalist_what = 20;
-            // console.log(margin_catonfire);
             top_Catalist_what= top_Catalist_what-(scroll/60);
             margin_catonfire= margin_catonfire-(scroll/30);
-            // console.log(margin_catonfire);
             posy = posy-(scroll/3);
             $('.CatOnFire').css('top',(Math.max(-1,margin_catonfire)+'rem'));
             $('.Catalist_what').css('top',(Math.max(6.8,top_Catalist_what)+'rem'));
             $('#atom-ta').css('top',(window.innerHeight)*0.7-(scroll/3));
             $('#atom-ca').css('top',(window.innerHeight)*0.6-(scroll/2));
             $('#atom-li').css('top',(window.innerHeight)*0.06-(scroll/1));
-            opacity = Math.max(0, Math.min(1, opacity));
-            opacity1 = Math.max(0, Math.min(1, opacity1));
-            opacity2 = Math.max(0, Math.min(1, opacity2));
-            opacity_inverse = Math.max(1-opacity_inverse,0);
-            $('.CatOnFire').css('opacity',opacity_inverse);
-            $('.row-reverse').css('opacity',opacity_inverse);
-            $('.landing_cat').css('opacity',opacity);
-            $('.phrase').css('opacity',opacity);
-            $('.scroll-down').css('opacity',opacity);
-            $('#atom-ca').css('opacity',opacity1);
-            $('#atom-ta').css('opacity',opacity2);
-            $('#atom-li').css('opacity',opacity);
+            parallax_opacity_inverse(800, '.CatOnFire', 'opacity');
+            parallax_opacity_inverse(800, '.row-inverse', 'opacity');
+            parallax_opacity(400, '.phrase', 'opacity');
+            parallax_opacity(400, '.landing_cat', 'opacity');
+            parallax_opacity(400, '.scroll-down', 'opacity');
+            parallax_opacity(800, '#atom-ca', 'opacity');
+            parallax_opacity(1200, '#atom-ta', 'opacity');
+            parallax_opacity(400, '#atom-li', 'opacity');
+            let drake = -50;
+            $('.image-box').css('margin-right',Math.min(drake + scroll/15,0)+'rem');
+            $('.image-box2').css('margin-left',Math.min(drake + scroll/22,0)+'rem');
         });
-        updateElements();          // <-- Set initial position
+        updateElements();          
     $(window).on("scroll", updateElements);
     }
 );
